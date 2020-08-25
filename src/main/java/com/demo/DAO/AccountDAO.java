@@ -24,6 +24,7 @@ public class AccountDAO {
 			
 			ResultSet rs = pstm.executeQuery();
 			while(rs.next()){
+				// admin : $2a$12$/LXzIVd3EudfdaDwhDPDzuVETi6xytLxhRxG4qmuUE/y8mv/5ek.W
 				account.setUsername(rs.getString("username"));
 				account.setPassword(rs.getString("password"));
 				
