@@ -30,7 +30,7 @@ public class AdminFilter implements Filter {
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest httpServletRequest = (HttpServletRequest) request;
 		HttpSession session = httpServletRequest.getSession();
-		if(session.getAttribute("username_admin") == null && 
+		if(session.getAttribute("user_admin") == null && 
 			!httpServletRequest.getRequestURI().endsWith("admin/login")
 			){
 			request.getRequestDispatcher("/WEB-INF/views/admin/login/index.jsp").forward(request, response);

@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MyConnection {
-	static String url = "jdbc:mysql://localhost:3306/economic";
+	static String url = "jdbc:mysql://localhost:3306/economic?serverTimezone=UTC";
 	static String username = "root";
 	static String pass = "";
 	
@@ -13,7 +13,7 @@ public class MyConnection {
 	{
 		Connection conn = null;
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			conn = DriverManager.getConnection(url,username,pass);
 			
 		} catch (ClassNotFoundException e) {
