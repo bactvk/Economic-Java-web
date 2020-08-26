@@ -173,7 +173,8 @@
           <img src="${pageContext.request.contextPath}/assets/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="${pageContext.request.contextPath}/admin/login?action=profile" class="d-block">${sessionScope.user_admin }</a>
+          <a href="${pageContext.request.contextPath}/admin/login?action=logout" class="d-block">Logout</a>
         </div>
       </div>
 

@@ -32,9 +32,9 @@
       	${error}
       </p>
 
-      <form action="" method="post">
+      <form action="${pageContext.request.contextPath }/admin/login" method="post">
         <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Username" name="username">
+          <input type="text" class="form-control" placeholder="Username" name="username" value="${param.username }">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>

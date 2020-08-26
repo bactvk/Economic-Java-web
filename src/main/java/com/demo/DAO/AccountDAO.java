@@ -19,7 +19,7 @@ public class AccountDAO {
 
 	public Account login(String username,String password,int role_id)
 	{
-		Account account = null;
+		Account account = new Account();
 		try {
 			Connection conn = MyConnection.getConnection();
 			System.out.println(conn);
@@ -27,28 +27,24 @@ public class AccountDAO {
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, username);
 			pstm.setInt(2, role_id); // role_id = 1 -> admin
+
 			
 			ResultSet rs = pstm.executeQuery();
-			while(rs.next()){
-				// admin : $2a$12$/LXzIVd3EudfdaDwhDPDzuVETi6xytLxhRxG4qmuUE/y8mv/5ek.W
-//				account = new Account(1, username, password, role_id);
-//				System.out.println(account.getPassword());
-//				System.out.println(account);
-//				BCrypt.hashpw(password, BCrypt.gensalt(15));
-//				if(BCrypt.checkpw(password,account.getPassword())){
-//					
-//					System.out.println(account);
-//					return account;
-//				}
-//				account.setUsername(rs.getString("username"));
-				account = new Account(1, rs.getString("username"), password, role_id);
-				System.out.println(account);
+//			System.out.println(BCrypt.hashpw("admin", BCrypt.gensalt())); // admin = $2a$10$UEj1gtgKhvAYyRgV1awNE.Vc9XfBhbdPWyPQh2OA7vZ/cVhK8CHrC
+			if(rs.next()){
+				account.setUsername(rs.getString("username"));
+				account.setPassword(rs.getString("password"));
+				
+				if(BCrypt.checkpw(password, account.getPassword())){
+					return account;
+				}
+				
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return account;
+		return null;
 	}
 }

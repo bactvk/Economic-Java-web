@@ -10,6 +10,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 
@@ -33,7 +34,10 @@ public class AdminFilter implements Filter {
 		if(session.getAttribute("user_admin") == null && 
 			!httpServletRequest.getRequestURI().endsWith("admin/login")
 			){
-			request.getRequestDispatcher("/WEB-INF/views/admin/login/index.jsp").forward(request, response);
+			HttpServletResponse resp = (HttpServletResponse)response;
+			
+			resp.sendRedirect("admin/login");
+//			request.getRequestDispatcher("/WEB-INF/views/admin/login/index.jsp").forward(request, response);
 		}else{
 			chain.doFilter(request, response);
 		}

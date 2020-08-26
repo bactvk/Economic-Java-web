@@ -14,7 +14,7 @@ import org.mindrot.jbcrypt.BCrypt;
 import com.demo.DAO.AccountDAO;
 import com.demo.models.Account;
 
-@WebServlet(value={
+@WebServlet(urlPatterns={
 	"/admin",
 	"/admin/login",
 	
@@ -24,7 +24,14 @@ public class LoginServlet extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		req.getRequestDispatcher("/WEB-INF/views/admin/login/index.jsp").forward(req, resp);
+		String action = req.getParameter("action");
+		if(action == null){
+			req.getRequestDispatcher("/WEB-INF/views/admin/login/index.jsp").forward(req, resp);
+		}
+		else if(action.equalsIgnoreCase("logout")){
+			doGetLogout(req,resp);
+		}
+		
 	}
 	
 	@Override
@@ -35,14 +42,19 @@ public class LoginServlet extends HttpServlet{
 		if(accountdao.login(username, password, 1) != null) //role_id = 1; //1:admin
 		{
 			HttpSession session = req.getSession();
-			System.out.println(username);
 			session.setAttribute("user_admin", username);
 			resp.sendRedirect("dashboard");
 		}else{
-			System.out.println("no ok");
 			req.setAttribute("error", "account invalid");
 			req.getRequestDispatcher("/WEB-INF/views/admin/login/index.jsp").forward(req,resp);
 		}
 		
+	}
+	
+	protected void doGetLogout(HttpServletRequest req, HttpServletResponse resp) throws IOException
+	{
+		HttpSession session = req.getSession();
+		session.removeAttribute("user_admin");
+		resp.sendRedirect("login");
 	}
 }
