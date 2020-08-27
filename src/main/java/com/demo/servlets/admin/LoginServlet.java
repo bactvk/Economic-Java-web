@@ -9,10 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import org.mindrot.jbcrypt.BCrypt;
-
 import com.demo.DAO.AccountDAO;
-import com.demo.models.Account;
 
 @WebServlet(urlPatterns={
 	"/admin",
@@ -30,6 +27,8 @@ public class LoginServlet extends HttpServlet{
 		}
 		else if(action.equalsIgnoreCase("logout")){
 			doGetLogout(req,resp);
+		}else if(action.equals("profile")){
+			doGetProfile(req,resp);
 		}
 		
 	}
@@ -50,11 +49,17 @@ public class LoginServlet extends HttpServlet{
 		}
 		
 	}
-	
 	protected void doGetLogout(HttpServletRequest req, HttpServletResponse resp) throws IOException
 	{
 		HttpSession session = req.getSession();
 		session.removeAttribute("user_admin");
 		resp.sendRedirect("login");
+	}
+	protected void doGetProfile(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
+		HttpSession session = req.getSession();
+		String username = (String) session.getAttribute("user_admin");
+		AccountDAO accountdao = new AccountDAO();
+		req.setAttribute("account", accountdao.findAccount(username, 1) ); // 1 = admin
+		req.getRequestDispatcher("/WEB-INF/views/admin/profile/edit.jsp").forward(req, resp);
 	}
 }

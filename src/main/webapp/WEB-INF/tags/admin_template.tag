@@ -173,7 +173,7 @@
           <img src="${pageContext.request.contextPath}/assets/admin/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="${pageContext.request.contextPath}/admin/login?action=profile" class="d-block">${sessionScope.user_admin }</a>
+          <a href="${pageContext.request.contextPath}/admin/profile" class="d-block">${sessionScope.user_admin }</a>
           <a href="${pageContext.request.contextPath}/admin/login?action=logout" class="d-block">Logout</a>
         </div>
       </div>
@@ -769,6 +769,9 @@
 <script src="${pageContext.request.contextPath}/assets/admin/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="${pageContext.request.contextPath}/assets/admin/dist/js/demo.js"></script>
+
+<script src="${pageContext.request.contextPath}/assets/admin/dist/js/script.js"></script>
+
 </body>
 </html>
 

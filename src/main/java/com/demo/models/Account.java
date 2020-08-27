@@ -5,6 +5,8 @@ public class Account {
 	private String username;
 	private String password;
 	private int role_id;
+	private String email;
+	
 	public int getId() {
 		return id;
 	}
@@ -28,6 +30,12 @@ public class Account {
 	}
 	public void setRole_id(int role_id) {
 		this.role_id = role_id;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
 	}
 	
 	
