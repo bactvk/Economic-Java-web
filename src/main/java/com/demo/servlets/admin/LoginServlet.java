@@ -38,7 +38,7 @@ public class LoginServlet extends HttpServlet{
 		String username = req.getParameter("username").trim();
 		String password = req.getParameter("password").trim();
 		AccountDAO accountdao = new AccountDAO();
-		if(accountdao.login(username, password, 1) != null) //role_id = 1; //1:admin
+		if(accountdao.login(username, password, 1) != null) //role_id = 1; //1:admin, $2a$10$UEj1gtgKhvAYyRgV1awNE.Vc9XfBhbdPWyPQh2OA7vZ/cVhK8CHrC
 		{
 			HttpSession session = req.getSession();
 			session.setAttribute("user_admin", username);

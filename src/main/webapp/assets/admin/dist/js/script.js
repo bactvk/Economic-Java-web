@@ -9,4 +9,20 @@ $(document).ready(function(){
 		}
 		
 	})
+	
+
+	
+	$("#example1").DataTable({
+		"paging" : true,
+		"lengthChange" : false,
+		"info" : true,
+		"searching" :false,
+		"autoWidth" : false,
+		columnDefs: [
+             { targets: 'no-sort', orderable: false }
+           ]
+	});
+		
+	
+
 })

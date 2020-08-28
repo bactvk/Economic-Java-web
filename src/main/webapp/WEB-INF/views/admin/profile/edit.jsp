@@ -16,7 +16,7 @@
 		                <div class="card-body">
 		                  <div class="form-group">
 		                    <label for="exampleInputEmail1">Username</label>
-		                    <input type="text" class="form-control" value="${account.username}" placeholder="Username" name="username" >
+		                    <input readonly="" type="text" class="form-control" value="${account.username}" placeholder="Username" name="username" >
 		                  </div>
 		                  
 		                  

@@ -53,8 +53,8 @@ public class ProfileServlet extends HttpServlet{
 			AccountDAO  accountdao = new AccountDAO();
 			accountdao.UpdateInfoAccount(username,password,email);
 			req.setAttribute("success", "update successfuly");
-//			req.getRequestDispatcher("/WEB-INF/views/admin/profile/edit.jsp").forward(req, resp);
-			resp.sendRedirect("profile");
+			req.getRequestDispatcher("/WEB-INF/views/admin/profile/edit.jsp").forward(req, resp);
+			
 		}
 		
 		
