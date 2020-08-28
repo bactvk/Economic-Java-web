@@ -17,8 +17,8 @@
                 <table id="example1" class="table table-bordered table-striped">
                   <thead>
 	                  <tr>
-	                    <th>Id</th>
-	                    <th>Name</th>
+	                    <th class="no-sort" >Id</th>
+	                    <th class="no-sort" >Name</th>
 	                    <th class="no-sort" >Action</th>
 	                    
 	                  </tr>
@@ -27,13 +27,23 @@
                   	<c:forEach var="item" items="${lists }">
 	                  <tr>
 	                    <td>${item.id}</td>
-	                    <td>${item.name}
+	                    
+				        <td class="${item.parent_id==0? '':'pl-5' }">
+	                    	${item.name}
 	                    </td>
+						   
 	                    <td>
 	                    	<a href="${pageContext.request.contextPath}/admin/category?action=edit&id=${item.id}" class="btn btn-warning">Edit</a>
-	                    	<a href="${pageContext.request.contextPath}/admin/category?action=delete&id=${item.id}" onclick="return confirm('Do you want to delete?')" class="btn btn-danger">Delete</a>
+	                    	<c:choose>
+							   <c:when test="${item.parent_id==0}">
+							   		<a href="${pageContext.request.contextPath}/admin/category?action=addSub&id=${item.id}" class="btn btn-primary">Add subCategory</a>
+							   </c:when> 
+							   <c:otherwise>
+							   		<a href="${pageContext.request.contextPath}/admin/category?action=delete&id=${item.id}" onclick="return confirm('Do you want to delete this record?')" class="btn btn-danger">Delete</a>
+							   </c:otherwise>    
+							</c:choose>
+	                    	
 	                    </td>
-	                   
 	                  </tr>
 	                 </c:forEach>
               		</tbody>

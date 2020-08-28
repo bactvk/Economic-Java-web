@@ -34,13 +34,17 @@ public class CategoryServlet extends HttpServlet{
 			int id = Integer.parseInt(req.getParameter("id"));
 			doGetEdit(req,resp,id);
 			
+		}else if(action.equals("addSub")){
+			int id = Integer.parseInt(req.getParameter("id"));
+			req.setAttribute("parent_id", id);
+			req.getRequestDispatcher("/WEB-INF/views/admin/category/add.jsp").forward(req, resp);
 		}
 		
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String action = req.getParameter("action");
-		if(action.equals("add")){
+		if(action.equals("add") || action.equals("addSub")){
 			doPostAdd(req,resp);
 		}else if(action.equals("edit")){
 			int id = Integer.parseInt(req.getParameter("id"));
@@ -52,16 +56,24 @@ public class CategoryServlet extends HttpServlet{
 	{
 		String name = req.getParameter("name");
 		String error = "";
+		String id = req.getParameter("parent_id");
+		System.out.println("id: "+id);
+		
 		if(name.equals("")){
 			error = "Please input category name";
 			req.setAttribute("error", error);
 			req.getRequestDispatcher("/WEB-INF/views/admin/category/add.jsp").forward(req, resp);
 		}else{
 			CategoryDAO categoryDAO = new CategoryDAO();
-			if(categoryDAO.insertCategory(name) == 1){
-				HttpSession session = req.getSession();
-				session.setAttribute("success", "Add category successfuly");
+			if(id == null){ //add category
+				
+				categoryDAO.insertCategory(name);
+
+			}else{ // add subcategory
+				categoryDAO.insertSubCategory(name,Integer.parseInt(id));
 			}
+			HttpSession session = req.getSession();
+			session.setAttribute("success", "Adding successfuly");
 			resp.sendRedirect("category");
 		}
 		

@@ -16,12 +16,14 @@
 		                <div class="card-body">
 		                  <div class="form-group">
 		                    <label for="exampleInputEmail1">Name category</label>
-		                    <input type="text" class="form-control" value="${param.name}" placeholder="Enter category name" name="name" >
+		                    <input type="text" class="form-control" value="${param.name}" name="name" >
 		                  </div>
 
 		                </div>
 		                <!-- /.card-body -->
-		
+						<c:if test="${not empty parent_id}">
+							<input type="hidden" value="${parent_id}" name="parent_id" >
+						</c:if>
 		                <div class="card-footer">
 		                  <button type="submit" class="btn btn-primary">Submit</button>
 		                </div>

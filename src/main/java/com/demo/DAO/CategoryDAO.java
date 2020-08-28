@@ -19,6 +19,32 @@ public class CategoryDAO {
 		List<Category> lists = new ArrayList<Category>();
 		try {
 			Connection conn = MyConnection.getConnection();
+			String sql = "SELECT c2.id,c2.name,c2.parent_id FROM category c1"
+					+ " LEFT JOIN category c2 ON (c1.id = c2.id OR c1.id = c2.parent_id) "
+					+ " WHERE c1.parent_id IS NULL AND c1.deleted_at IS NULL"
+					+ " ORDER BY c1.id,c2.id";
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			ResultSet rs = pstm.executeQuery();
+			while(rs.next()){
+				Category category = new Category();
+				category.setName(rs.getString("name"));
+				category.setId(rs.getInt("id"));
+				category.setParent_id(rs.getInt("parent_id"));
+				lists.add(category);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return lists;
+	}
+	
+	public List<Category> getAllParent()
+	{
+		List<Category> lists = new ArrayList<Category>();
+		try {
+			Connection conn = MyConnection.getConnection();
 			String sql = "SELECT * FROM category WHERE deleted_at IS NULL";
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			ResultSet rs = pstm.executeQuery();
@@ -45,6 +71,24 @@ public class CategoryDAO {
 			String sql = "INSERT INTO category (`name`) VALUES(?)";
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, name);
+			pstm.executeUpdate();
+			status = 1;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return status;
+	}
+	
+	public int insertSubCategory(String name,int id)
+	{
+		int status = 0;
+		try {
+			Connection conn = MyConnection.getConnection();
+			String sql = "INSERT INTO category (`name`,`parent_id`) VALUES(?,?)";
+			PreparedStatement pstm = conn.prepareStatement(sql);
+			pstm.setString(1, name);
+			pstm.setInt(2, id);
 			pstm.executeUpdate();
 			status = 1;
 		} catch (SQLException e) {

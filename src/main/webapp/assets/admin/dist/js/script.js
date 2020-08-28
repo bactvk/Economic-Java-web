@@ -18,6 +18,7 @@ $(document).ready(function(){
 		"info" : true,
 		"searching" :false,
 		"autoWidth" : false,
+		"sorting" : false,
 		columnDefs: [
              { targets: 'no-sort', orderable: false }
            ]
