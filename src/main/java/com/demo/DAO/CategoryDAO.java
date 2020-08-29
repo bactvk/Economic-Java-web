@@ -21,7 +21,7 @@ public class CategoryDAO {
 			Connection conn = MyConnection.getConnection();
 			String sql = "SELECT c2.id,c2.name,c2.parent_id FROM category c1"
 					+ " LEFT JOIN category c2 ON (c1.id = c2.id OR c1.id = c2.parent_id) "
-					+ " WHERE c1.parent_id IS NULL AND c1.deleted_at IS NULL"
+					+ " WHERE c1.parent_id IS NULL AND c1.deleted_at IS NULL AND c2.deleted_at IS NULL "
 					+ " ORDER BY c1.id,c2.id";
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			ResultSet rs = pstm.executeQuery();

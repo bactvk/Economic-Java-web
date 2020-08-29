@@ -6,7 +6,7 @@
 		<div class="card">
               <div class="card-header">
                 <h3 class="card-title">Category</h3>
-                <a href ="${pageContext.request.contextPath}/admin/category?action=add" class="btn btn-success float-right">Add category <i class="fa fa-plus-circle"></i></a>
+                <a href ="${pageContext.request.contextPath}/admin/category/add" class="btn btn-success float-right">Add category <i class="fa fa-plus-circle"></i></a>
               </div>
               	<c:if test="${not empty sessionScope.success}" >
               		<div class="alert alert-success">${sessionScope.success}</div>
@@ -33,13 +33,13 @@
 	                    </td>
 						   
 	                    <td>
-	                    	<a href="${pageContext.request.contextPath}/admin/category?action=edit&id=${item.id}" class="btn btn-warning">Edit</a>
+	                    	<a href="${pageContext.request.contextPath}/admin/category/edit?id=${item.id}" class="btn btn-warning">Edit</a>
 	                    	<c:choose>
 							   <c:when test="${item.parent_id==0}">
-							   		<a href="${pageContext.request.contextPath}/admin/category?action=addSub&id=${item.id}" class="btn btn-primary">Add subCategory</a>
+							   		<a href="${pageContext.request.contextPath}/admin/category/addSub?id=${item.id}" class="btn btn-primary">Add subCategory</a>
 							   </c:when> 
 							   <c:otherwise>
-							   		<a href="${pageContext.request.contextPath}/admin/category?action=delete&id=${item.id}" onclick="return confirm('Do you want to delete this record?')" class="btn btn-danger">Delete</a>
+							   		<a href="${pageContext.request.contextPath}/admin/category/delete?id=${item.id}" onclick="return confirm('Do you want to delete this record?')" class="btn btn-danger">Delete</a>
 							   </c:otherwise>    
 							</c:choose>
 	                    	

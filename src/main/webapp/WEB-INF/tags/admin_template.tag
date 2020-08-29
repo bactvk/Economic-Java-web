@@ -2,6 +2,10 @@
 <%@ attribute name="title" required="true" type="java.lang.String" %>
 <%@ attribute name="content" fragment="true" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+<c:set var="pagina" value="${requestScope['javax.servlet.forward.request_uri']}" />
+<c:set var="Subpagina" value="${requestScope['javax.servlet.forward.path_info']}" />
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -184,8 +188,9 @@
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="${pageContext.request.contextPath}/admin/dashboard" class="nav-link active">
+         
+          <li class="nav-item has-treeview">
+            <a href="${pageContext.request.contextPath}/admin/dashboard" class="nav-link ${pagina.endsWith('/dashboard') ? 'active' : ''}">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -196,8 +201,8 @@
           </li>
           
           
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <li class="nav-item has-treeview ${pagina.contains('/category') ? 'menu-open' : ''}">
+            <a href="#" class="nav-link ${pagina.contains('/category') ? 'active' : ''}">
               <i class="nav-icon fas fa-edit"></i>
               <p>
                 Category
@@ -206,13 +211,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="${pageContext.request.contextPath }/admin/category?action=add" class="nav-link">
+                <a href="${pageContext.request.contextPath }/admin/category/add" class="nav-link ${Subpagina.endsWith('/add') ? 'active' : ''}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="${pageContext.request.contextPath }/admin/category" class="nav-link">
+                <a href="${pageContext.request.contextPath }/admin/category/list" class="nav-link ${pagina.endsWith('/list') ? 'active' : ''}">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List</p>
                 </a>

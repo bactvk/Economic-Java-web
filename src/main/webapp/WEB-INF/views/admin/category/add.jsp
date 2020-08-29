@@ -8,14 +8,14 @@
 	      		<div class="col-sm-6 offset-md-3">
 					<div class="card card-primary">
 		              <div class="card-header">
-		                <h3 class="card-title">Add category</h3>
+		                <h3 class="card-title">Add ${parent_id!=null?'Sub':''} category</h3>
 		              </div>
 		              <!-- /.card-header -->
 		              <!-- form start -->
 		              <form role="form" method="post">
 		                <div class="card-body">
 		                  <div class="form-group">
-		                    <label for="exampleInputEmail1">Name category</label>
+		                    <label for="exampleInputEmail1">Name ${parent_id!=null?'Sub':''} category</label>
 		                    <input type="text" class="form-control" value="${param.name}" name="name" >
 		                  </div>
 

@@ -12,29 +12,32 @@ import javax.servlet.http.HttpSession;
 
 import com.demo.DAO.CategoryDAO;
 import com.demo.models.Category;
+import com.sun.istack.internal.logging.Logger;
 
-@WebServlet("/admin/category")
+@WebServlet("/admin/category/*")
 public class CategoryServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String action = req.getParameter("action");
-		if(action == null){ // list
+//		String action = req.getParameter("action");
+		String action = req.getPathInfo();
+		System.out.println("dispatch path: "+ req.getPathInfo());
+		if(action.equals("/list")){ // list
 			CategoryDAO categoryDAO = new CategoryDAO();
 			List<Category> lists = categoryDAO.getAll();
 			req.setAttribute("lists",lists);
 			req.getRequestDispatcher("/WEB-INF/views/admin/category/list.jsp").forward(req, resp);
-		}else if(action.equals("add")){
+		}else if(action.equals("/add")){
 			req.getRequestDispatcher("/WEB-INF/views/admin/category/add.jsp").forward(req, resp);
-		}else if(action.equals("delete")){
+		}else if(action.equals("/delete")){
 			int id = Integer.parseInt(req.getParameter("id"));
 			doGetDelete(req,resp,id);
-		}else if(action.equals("edit")){
+		}else if(action.equals("/edit")){
 			int id = Integer.parseInt(req.getParameter("id"));
 			doGetEdit(req,resp,id);
 			
-		}else if(action.equals("addSub")){
+		}else if(action.equals("/addSub")){
 			int id = Integer.parseInt(req.getParameter("id"));
 			req.setAttribute("parent_id", id);
 			req.getRequestDispatcher("/WEB-INF/views/admin/category/add.jsp").forward(req, resp);
@@ -43,10 +46,11 @@ public class CategoryServlet extends HttpServlet{
 	}
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String action = req.getParameter("action");
-		if(action.equals("add") || action.equals("addSub")){
+//		String action = req.getParameter("action");
+		String action = req.getPathInfo();
+		if(action.equals("/add") || action.equals("/addSub")){
 			doPostAdd(req,resp);
-		}else if(action.equals("edit")){
+		}else if(action.equals("/edit")){
 			int id = Integer.parseInt(req.getParameter("id"));
 			doPostEdit(req,resp,id);
 		}
@@ -74,7 +78,7 @@ public class CategoryServlet extends HttpServlet{
 			}
 			HttpSession session = req.getSession();
 			session.setAttribute("success", "Adding successfuly");
-			resp.sendRedirect("category");
+			resp.sendRedirect("list");
 		}
 		
 	}
@@ -91,7 +95,7 @@ public class CategoryServlet extends HttpServlet{
 			categoryDAO.editCategory(name, id);
 			HttpSession session = req.getSession();
 			session.setAttribute("success", "Edit category successfuly");
-			resp.sendRedirect("category");
+			resp.sendRedirect("list");
 		}
 	}
 	
@@ -101,7 +105,7 @@ public class CategoryServlet extends HttpServlet{
 		categoryDAO.deleteCategory(id);
 		HttpSession session = req.getSession();
 		session.setAttribute("success", "Delete category success");
-		resp.sendRedirect("category");
+		resp.sendRedirect("list");
 	}
 	
 	public void doGetEdit(HttpServletRequest req,HttpServletResponse resp,int id) throws ServletException, IOException
