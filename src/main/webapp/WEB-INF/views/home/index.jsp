@@ -44,7 +44,7 @@
 											<div class="clearfix"></div>
 										</div>
 										<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="images/of.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of.png">Add to Cart</button>
 										</div>
 										
 									</div>
@@ -68,7 +68,7 @@
 											<div class="clearfix"></div>
 										</div>
 												<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="2" data-name="Sunflower Oil" data-summary="summary 2" data-price="9.00" data-quantity="1" data-image="images/of1.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="2" data-name="Sunflower Oil" data-summary="summary 2" data-price="9.00" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of1.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -91,7 +91,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of2.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -114,7 +114,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="4" data-name="Soya Chunks" data-summary="summary 4" data-price="3.50" data-quantity="1" data-image="images/of3.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="4" data-name="Soya Chunks" data-summary="summary 4" data-price="3.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of3.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -142,7 +142,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="5" data-name="Lays" data-summary="summary 5" data-price="0.70" data-quantity="1" data-image="images/of4.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="5" data-name="Lays" data-summary="summary 5" data-price="0.70" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of4.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -165,7 +165,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="6" data-name="Kurkure" data-summary="summary 6" data-price="0.70" data-quantity="1" data-image="images/of5.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="6" data-name="Kurkure" data-summary="summary 6" data-price="0.70" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of5.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -188,7 +188,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="7" data-name="Popcorn" data-summary="summary 7" data-price="1.00" data-quantity="1" data-image="images/of6.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="7" data-name="Popcorn" data-summary="summary 7" data-price="1.00" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of6.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -211,7 +211,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="8" data-name="Nuts" data-summary="summary 8" data-price="3.50" data-quantity="1" data-image="images/of7.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="8" data-name="Nuts" data-summary="summary 8" data-price="3.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of7.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -239,7 +239,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of8.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -262,7 +262,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="10" data-name="Onion" data-summary="summary 10" data-price="0.70" data-quantity="1" data-image="images/of9.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="10" data-name="Onion" data-summary="summary 10" data-price="0.70" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of9.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -285,7 +285,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="11" data-name="Bitter Gourd" data-summary="summary 11" data-price="1.00" data-quantity="1" data-image="images/of10.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="11" data-name="Bitter Gourd" data-summary="summary 11" data-price="1.00" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of10.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -308,7 +308,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="12" data-name="Apples" data-summary="summary 12" data-price="3.50" data-quantity="1" data-image="images/of11.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="12" data-name="Apples" data-summary="summary 12" data-price="3.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of11.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -336,7 +336,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="13" data-name="Honey" data-summary="summary 13" data-price="6.00" data-quantity="1" data-image="images/of12.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="13" data-name="Honey" data-summary="summary 13" data-price="6.00" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of12.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -359,7 +359,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="14" data-name="Chocos" data-summary="summary 14" data-price="4.50" data-quantity="1" data-image="images/of13.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="14" data-name="Chocos" data-summary="summary 14" data-price="4.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of13.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -382,7 +382,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="15" data-name="Oats" data-summary="summary 15" data-price="3.50" data-quantity="1" data-image="images/of14.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="15" data-name="Oats" data-summary="summary 15" data-price="3.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of14.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -405,7 +405,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="16" data-name="Bread" data-summary="summary 16" data-price="0.80" data-quantity="1" data-image="images/of15.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="16" data-name="Bread" data-summary="summary 16" data-price="0.80" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of15.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -528,7 +528,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add add-2">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="images/of16.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of16.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -550,7 +550,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="4.50" data-quantity="1" data-image="images/of17.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="4.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of17.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -572,7 +572,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="3.50" data-quantity="1" data-image="images/of18.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="3.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of18.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -594,7 +594,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="0.80" data-quantity="1" data-image="images/of19.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="0.80" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of19.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -617,7 +617,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="images/of20.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of20.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -639,7 +639,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="4.50" data-quantity="1" data-image="images/of21.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="4.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of21.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -661,7 +661,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="3.50" data-quantity="1" data-image="images/of22.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="3.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of22.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>
@@ -683,7 +683,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="0.80" data-quantity="1" data-image="images/of23.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="0.80" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of23.png">Add to Cart</button>
 										</div>
 									</div>
 								</div>

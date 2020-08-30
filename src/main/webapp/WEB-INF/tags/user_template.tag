@@ -428,7 +428,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="images/of.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="1" data-name="Moong" data-summary="summary 1" data-price="1.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -460,7 +460,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="2" data-name="Sunflower Oil" data-summary="summary 2" data-price="9.00" data-quantity="1" data-image="images/of1.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="2" data-name="Sunflower Oil" data-summary="summary 2" data-price="9.00" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of1.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -492,7 +492,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of2.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -524,7 +524,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="4" data-name="Soya Chunks" data-summary="summary 4" data-price="3.50" data-quantity="1" data-image="images/of3.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="4" data-name="Soya Chunks" data-summary="summary 4" data-price="3.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of3.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -556,7 +556,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="5" data-name="Lays" data-summary="summary 5" data-price="0.70" data-quantity="1" data-image="images/of4.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="5" data-name="Lays" data-summary="summary 5" data-price="0.70" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of4.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -588,7 +588,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="6" data-name="Kurkure" data-summary="summary 6" data-price="0.70" data-quantity="1" data-image="images/of5.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="6" data-name="Kurkure" data-summary="summary 6" data-price="0.70" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of5.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -620,7 +620,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="7" data-name="Popcorn" data-summary="summary 7" data-price="1.00" data-quantity="1" data-image="images/of6.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="7" data-name="Popcorn" data-summary="summary 7" data-price="1.00" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of6.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -652,7 +652,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="8" data-name="Nuts" data-summary="summary 8" data-price="3.50" data-quantity="1" data-image="images/of7.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="8" data-name="Nuts" data-summary="summary 8" data-price="3.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of7.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -684,7 +684,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of8.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -716,7 +716,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="10" data-name="Onion" data-summary="summary 10" data-price="0.70" data-quantity="1" data-image="images/of9.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="10" data-name="Onion" data-summary="summary 10" data-price="0.70" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of9.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -748,7 +748,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="11" data-name="Bitter Gourd" data-summary="summary 11" data-price="1.00" data-quantity="1" data-image="images/of10.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="11" data-name="Bitter Gourd" data-summary="summary 11" data-price="1.00" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of10.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -780,7 +780,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="12" data-name="Apples" data-summary="summary 12" data-price="3.50" data-quantity="1" data-image="images/of11.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="12" data-name="Apples" data-summary="summary 12" data-price="3.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of11.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -812,7 +812,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="13" data-name="Honey" data-summary="summary 13" data-price="6.00" data-quantity="1" data-image="images/of12.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="13" data-name="Honey" data-summary="summary 13" data-price="6.00" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of12.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -844,7 +844,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="14" data-name="Chocos" data-summary="summary 14" data-price="4.50" data-quantity="1" data-image="images/of13.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="14" data-name="Chocos" data-summary="summary 14" data-price="4.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of13.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -876,7 +876,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="15" data-name="Oats" data-summary="summary 15" data-price="3.50" data-quantity="1" data-image="images/of14.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="15" data-name="Oats" data-summary="summary 15" data-price="3.50" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of14.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -908,7 +908,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="16" data-name="Bread" data-summary="summary 16" data-price="0.80" data-quantity="1" data-image="images/of15.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="16" data-name="Bread" data-summary="summary 16" data-price="0.80" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of15.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -940,7 +940,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="17" data-name="Moisturiser" data-summary="summary 17" data-price="0.80" data-quantity="1" data-image="images/of16.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="17" data-name="Moisturiser" data-summary="summary 17" data-price="0.80" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of16.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -972,7 +972,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="18" data-name="Lady Finger" data-summary="summary 18" data-price="0.80" data-quantity="1" data-image="images/of17.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="18" data-name="Lady Finger" data-summary="summary 18" data-price="0.80" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of17.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1004,7 +1004,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="19" data-name="Satin Ribbon Red" data-summary="summary 19" data-price="0.80" data-quantity="1" data-image="images/of18.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="19" data-name="Satin Ribbon Red" data-summary="summary 19" data-price="0.80" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of18.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1036,7 +1036,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="20" data-name="Grapes" data-summary="summary 20" data-price="0.80" data-quantity="1" data-image="images/of19.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="20" data-name="Grapes" data-summary="summary 20" data-price="0.80" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of19.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1068,7 +1068,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="21" data-name="Clips" data-summary="summary 21" data-price="0.80" data-quantity="1" data-image="images/of20.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="21" data-name="Clips" data-summary="summary 21" data-price="0.80" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of20.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1100,7 +1100,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="22" data-name="Conditioner" data-summary="summary 22" data-price="0.80" data-quantity="1" data-image="images/of21.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="22" data-name="Conditioner" data-summary="summary 22" data-price="0.80" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of21.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1132,7 +1132,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="23" data-name="Cleaner" data-summary="summary 23" data-price="0.80" data-quantity="1" data-image="images/of22.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="23" data-name="Cleaner" data-summary="summary 23" data-price="0.80" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of22.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1164,7 +1164,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; es</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="24" data-name="Gel" data-summary="summary 24" data-price="0.80" data-quantity="1" data-image="images/of23.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="24" data-name="Gel" data-summary="summary 24" data-price="0.80" data-quantity="1" data-image="${pageContext.request.contextPath}/assets/user/images/of23.png">Add to Cart</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>

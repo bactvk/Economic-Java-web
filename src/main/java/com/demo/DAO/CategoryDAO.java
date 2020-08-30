@@ -45,7 +45,7 @@ public class CategoryDAO {
 		List<Category> lists = new ArrayList<Category>();
 		try {
 			Connection conn = MyConnection.getConnection();
-			String sql = "SELECT * FROM category WHERE deleted_at IS NULL";
+			String sql = "SELECT * FROM category WHERE deleted_at IS NULL AND parent_id IS NULL";
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			ResultSet rs = pstm.executeQuery();
 			while(rs.next()){

@@ -191,7 +191,7 @@
          
           <li class="nav-item has-treeview">
             <a href="${pageContext.request.contextPath}/admin/dashboard" class="nav-link ${pagina.endsWith('/dashboard') ? 'active' : ''}">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-tachometer-alt text-warning"></i>
               <p>
                 Dashboard
                
@@ -203,7 +203,7 @@
           
           <li class="nav-item has-treeview ${pagina.contains('/category') ? 'menu-open' : ''}">
             <a href="#" class="nav-link ${pagina.contains('/category') ? 'active' : ''}">
-              <i class="nav-icon fas fa-edit"></i>
+              <i class="nav-icon fas fa-edit text-warning"></i>
               <p>
                 Category
                 <i class="fas fa-angle-left right"></i>
@@ -211,14 +211,39 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="${pageContext.request.contextPath }/admin/category/add" class="nav-link ${Subpagina.endsWith('/add') ? 'active' : ''}">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="${pageContext.request.contextPath }/admin/category/add" class="nav-link ${Subpagina.endsWith('/add')&&pagina.contains('/category') ? 'active' : ''}">
+                  <i class="far fa-circle nav-icon text-danger"></i>
                   <p>Add</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="${pageContext.request.contextPath }/admin/category/list" class="nav-link ${pagina.endsWith('/list') ? 'active' : ''}">
-                  <i class="far fa-circle nav-icon"></i>
+                <a href="${pageContext.request.contextPath }/admin/category/list" class="nav-link ${pagina.endsWith('/list')&&pagina.contains('/category') ? 'active' : ''}">
+                  <i class="far fa-circle nav-icon text-danger"></i>
+                  <p>List</p>
+                </a>
+              </li>
+              
+            </ul>
+          </li>
+          
+          <li class="nav-item has-treeview ${pagina.contains('/product') ? 'menu-open' : ''}">
+            <a href="#" class="nav-link ${pagina.contains('/product') ? 'active' : ''}">
+              <i class="nav-icon fas fa-book text-warning"></i>
+              <p>
+                Product
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="${pageContext.request.contextPath }/admin/product/add" class="nav-link ${Subpagina.endsWith('/add')&&pagina.contains('/product') ? 'active' : ''}">
+                  <i class="far fa-circle nav-icon text-info"></i>
+                  <p>Add</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="${pageContext.request.contextPath }/admin/product/list" class="nav-link ${pagina.endsWith('/list')&&pagina.contains('/product') ? 'active' : ''}">
+                  <i class="far fa-circle nav-icon text-info"></i>
                   <p>List</p>
                 </a>
               </li>
