@@ -29,9 +29,7 @@
 		                </div>
 		              </form>
 		           	</div>
-		           	<c:if test="${not empty success}">
-		           		<div class ="alert alert-success">${success}</div>
-		           	</c:if>
+		           
 		           	<c:if test="${not empty error}">
 			           	<li class="alert alert-danger">${error}</li>
 		           	</c:if>
