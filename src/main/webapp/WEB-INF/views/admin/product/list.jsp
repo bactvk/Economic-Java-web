@@ -36,7 +36,9 @@
 				        <td class="">${item.category_name} </td>
 				        <td class="">${item.number} </td>
 						<td class="">${item.sale} % </td>   
-						<td class=""> </td>
+						<td class="">
+							<img alt="" style="width:80px" src=" ${pageContext.request.contextPath }/assets/uploads/${item.image}">
+						 </td>
 	                    <td>
 	                    	<a href="${pageContext.request.contextPath}/admin/product/edit?id=${item.id}" class="btn btn-warning">Edit</a>
 	                    	

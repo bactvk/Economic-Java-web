@@ -18,14 +18,15 @@ public class ProductDAO {
 	{
 		try {
 			Connection conn = MyConnection.getConnection();
-			String sql = "INSERT INTO products (`name`,`price`,`category_id`,`number`,`sale`,`content`) VALUES(?,?,?,?,?,?)";
+			String sql = "INSERT INTO products (`name`,`price`,`category_id`,`number`,`sale`,`image`,`content`) VALUES(?,?,?,?,?,?,?)";
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1,p.getName());
 			pstm.setFloat(2, p.getPrice());
 			pstm.setInt(3,p.getCategory_id());
 			pstm.setInt(4, p.getNumber());
 			pstm.setInt(5, p.getSale());
-			pstm.setString(6, p.getContent());
+			pstm.setString(6,p.getImage());
+			pstm.setString(7, p.getContent());
 			
 			pstm.executeUpdate();
 			
@@ -43,7 +44,7 @@ public class ProductDAO {
 		
 		try {
 			Connection conn = MyConnection.getConnection();
-			String sql = "SELECT p.id,p.name,p.number,p.price,p.sale,c.name as category_name FROM products p LEFT JOIN category c "
+			String sql = "SELECT p.id,p.name,p.number,p.price,p.sale,p.image,c.name as category_name FROM products p LEFT JOIN category c "
 					+ "ON p.category_id = c.id"
 					+ " WHERE p.deleted_at IS NULL";
 			PreparedStatement pstm = conn.prepareStatement(sql);
@@ -57,6 +58,7 @@ public class ProductDAO {
 				product.setNumber(rs.getInt("number"));
 				product.setPrice(rs.getFloat("price"));
 				product.setSale(rs.getInt("sale"));
+				product.setImage(rs.getString("image"));
 				list.add(product);
 			}
 		} catch (SQLException e) {

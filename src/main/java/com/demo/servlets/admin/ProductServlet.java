@@ -12,11 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-import org.apache.tomcat.util.http.fileupload.FileItem;
-import org.apache.tomcat.util.http.fileupload.RequestContext;
-import org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory;
-import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
+import javax.servlet.http.Part;
 
 import com.demo.DAO.CategoryDAO;
 import com.demo.DAO.ProductDAO;
@@ -24,17 +20,16 @@ import com.demo.models.Category;
 import com.demo.models.Product;
 
 @WebServlet(urlPatterns = "/admin/product/*")
-@MultipartConfig
+@MultipartConfig(fileSizeThreshold = 1024 * 1024 * 2, // 2MB
+	maxFileSize = 1024 * 1024 * 10, // 10MB
+	maxRequestSize = 1024 * 1024 * 50 // 50MB
+)
 public class ProductServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
 	// location to store file uploaded
-    private static final String UPLOAD_DIRECTORY = "upload";
+	public static final String SAVE_DIRECTORY = "assets/uploads/";
  
-    // upload settings
-    private static final int MEMORY_THRESHOLD   = 1024 * 1024 * 3;  // 3MB
-    private static final int MAX_FILE_SIZE      = 1024 * 1024 * 40; // 40MB
-    private static final int MAX_REQUEST_SIZE   = 1024 * 1024 * 50; // 50MB
     
 	
 	@Override
@@ -106,54 +101,32 @@ public class ProductServlet extends HttpServlet{
 		int number = (!req.getParameter("number").equals(""))? Integer.parseInt(req.getParameter("number")):0;
 		int sale = (!req.getParameter("sale").equals(""))? Integer.parseInt(req.getParameter("sale")):0;
 		
+		String fileName = "";
 		//upload file
-		DiskFileItemFactory factory = new DiskFileItemFactory();
-        // sets memory threshold - beyond which files are stored in disk
-        factory.setSizeThreshold(MEMORY_THRESHOLD);
-        // sets temporary location to store files
-        factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
- 
-        ServletFileUpload upload = new ServletFileUpload(factory);
-        // sets maximum size of upload file
-        upload.setFileSizeMax(MAX_FILE_SIZE);
-        // sets maximum size of request (include file + form data)
-        upload.setSizeMax(MAX_REQUEST_SIZE);
-        
-        String uploadPath = getServletContext().getRealPath("")
-                + File.separator + UPLOAD_DIRECTORY;
-        
-        // creates the directory if it does not exist
-        File uploadDir = new File(uploadPath);
-        if (!uploadDir.exists()) {
-            uploadDir.mkdir();
+		
+        String appPath = req.getServletContext().getRealPath("");
+        appPath = appPath.replace('\\', '/');
+        // Thư mục để save file tải lên.
+        String fullSavePath = null;
+        if (appPath.endsWith("/")) {
+            fullSavePath = appPath + SAVE_DIRECTORY;
+        } else {
+            fullSavePath = appPath + "/" + SAVE_DIRECTORY;
         }
- 
-        try {
-            // parses the request's content to extract file data
-            @SuppressWarnings("unchecked")
-            List<FileItem> formItems = upload.parseRequest((RequestContext) req);
- 
-            if (formItems != null && formItems.size() > 0) {
-                // iterates over form's fields
-                for (FileItem item : formItems) {
-                    // processes only fields that are not form fields
-                    if (!item.isFormField()) {
-                        String fileName = new File(item.getName()).getName();
-                        String filePath = uploadPath + File.separator + fileName;
-                        File storeFile = new File(filePath);
- 
-                        // saves the file on disk
-                        item.write(storeFile);
-                        System.out.println("path: "+filePath);
-                    }
-                }
-               
+        // Danh mục các phần đã upload lên (Có thể là nhiều file).
+        for (Part part : req.getParts()) {
+            fileName = extractFileName(part);
+            if (fileName != null && fileName.length() > 0) {
+                String filePath = fullSavePath + fileName;
+                System.out.println("Write attachment to file: " + filePath);
+
+                // Ghi vào file.
+                part.write(filePath);
+                break;
             }
-        } catch (Exception ex) {
-            req.setAttribute("message",
-                    "There was an error: " + ex.getMessage());
         }
-        //
+        
+        
 		List<String> errors = new ArrayList<String>();
 		if(category_id == 0) {
 			errors.add("Please choose category");
@@ -167,6 +140,7 @@ public class ProductServlet extends HttpServlet{
 		if(number == 0) {
 			errors.add("Please enter number product");
 		}
+		
 		if(!errors.isEmpty()) {
 			CategoryDAO categoryDAO = new CategoryDAO();
 			List<Category> lists = categoryDAO.getAllParent();
@@ -181,6 +155,7 @@ public class ProductServlet extends HttpServlet{
 			product.setNumber(number);
 			product.setPrice(price);
 			product.setSale(sale);
+			product.setImage(fileName);
 			
 			ProductDAO productDAO = new ProductDAO();
 			productDAO.insertProduct(product);
@@ -240,5 +215,17 @@ public class ProductServlet extends HttpServlet{
 		
 	}
 	
-	
+	private String extractFileName (Part part) {
+		String contentDisp = part.getHeader ("content-disposition");
+		String [] items = contentDisp.split (";");
+		for (String s: items) {
+			if (s.trim (). startsWith ("filename")) {
+				String clientFileName = s.substring (s.indexOf ("=") + 2, s.length () - 1);
+				clientFileName = clientFileName.replace ("\\", "/");
+				int i = clientFileName.lastIndexOf ('/');
+				return clientFileName.substring (i + 1);
+			}
+		}
+		return null;
+	}
 }

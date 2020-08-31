@@ -9,7 +9,14 @@ public class Product {
 	private int number;
 	private int sale;
 	private String content;
+	private String image;
 	
+	public final String getImage() {
+		return image;
+	}
+	public final void setImage(String image) {
+		this.image = image;
+	}
 	public String getContent() {
 		return content;
 	}

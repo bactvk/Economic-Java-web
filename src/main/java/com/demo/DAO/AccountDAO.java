@@ -17,7 +17,7 @@ public class AccountDAO {
 		Account account = new Account();
 		try {
 			Connection conn = MyConnection.getConnection();
-			String sql = "SELECT * FROM account WHERE username = ? AND role_id = ? LIMIT 1";
+			String sql = "SELECT * FROM accounts WHERE username = ? AND role_id = ? LIMIT 1";
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, username);
 			pstm.setInt(2, role_id);
@@ -41,7 +41,7 @@ public class AccountDAO {
 		try {
 			Connection conn = MyConnection.getConnection();
 			System.out.println(conn);
-			String sql = "SELECT * FROM account WHERE username=? AND role_id = ?";
+			String sql = "SELECT * FROM accounts WHERE username=? AND role_id = ?";
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.setString(1, username);
 			pstm.setInt(2, role_id); // role_id = 1 -> admin
@@ -72,10 +72,10 @@ public class AccountDAO {
 			Connection conn = MyConnection.getConnection();
 			String sql = "";
 			if(password.equals("")){
-				sql = "UPDATE account SET username='" +username+ "'," + "email='" + email + "'" ;
+				sql = "UPDATE accounts SET username='" +username+ "'," + "email='" + email + "'" ;
 			}else{
 				String new_pass = BCrypt.hashpw(password, BCrypt.gensalt());
-				sql = "UPDATE account SET username='" +username+ "'," + "email='" + email + "'" + ",password='" + new_pass + "'";
+				sql = "UPDATE accounts SET username='" +username+ "'," + "email='" + email + "'" + ",password='" + new_pass + "'";
 			}
 			PreparedStatement pstm = conn.prepareStatement(sql);
 			pstm.executeUpdate();
