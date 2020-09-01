@@ -106,7 +106,7 @@ public class ProductDAO {
 				product.setPrice(rs.getFloat("price"));
 				product.setNumber(rs.getInt("number"));
 				product.setSale(rs.getInt("sale"));
-				
+				product.setImage(rs.getString("image"));
 				return product;
 			}
 		} catch (SQLException e) {
@@ -122,14 +122,26 @@ public class ProductDAO {
 	{
 		try {
 			Connection conn = MyConnection.getConnection();
-			String sql = "UPDATE products SET category_id=?, name = ?, price = ?, number = ?, sale = ? WHERE id=? ";
+			
+			String updateImage = "";
+			String getImage = p.getImage();
+			if(getImage != null){
+				updateImage = ", image ='"+ p.getImage() + "'";
+			}
+			String sql = "UPDATE products SET category_id= '"+ p.getCategory_id() +  "', name = '"+ p.getName() +  "', price = '"+ p.getPrice() +  "'"
+					+ ", number = '"+ p.getNumber() +  "', sale = '"+ p.getSale() +  "'" + updateImage + " WHERE id="+id;
 			PreparedStatement pstm = conn.prepareStatement(sql);
-			pstm.setInt(1, p.getCategory_id());
-			pstm.setString(2, p.getName());
-			pstm.setFloat(3, p.getPrice());
-			pstm.setInt(4, p.getNumber());
-			pstm.setInt(5, p.getSale());
-			pstm.setInt(6, id);
+//			pstm.setInt(1, p.getCategory_id());
+//			pstm.setString(2, p.getName());
+//			pstm.setFloat(3, p.getPrice());
+//			pstm.setInt(4, p.getNumber());
+//			pstm.setInt(5, p.getSale());
+//			if(!p.getImage().equals("")){
+//				pstm.setString(6, p.getImage());
+//			}
+			
+//			pstm.setInt(7, id);
+			
 			pstm.executeUpdate();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

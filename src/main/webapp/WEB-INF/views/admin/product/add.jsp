@@ -63,7 +63,7 @@
 			                  	<input type="number" min="0" class="form-control" name="sale" value="${param.sale}">
 			                  </div>
 			                  <div class="col-sm-2">
-			                  	<label for="exampleInputEmail1">Image <span style="color:red">*</span></label>
+			                  	<label for="exampleInputEmail1">Image </label>
 			                  </div>
 			                  <div class="col-sm-4">
 			                  	<input type="file" value="" name="image" >

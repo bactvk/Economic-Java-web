@@ -101,32 +101,7 @@ public class ProductServlet extends HttpServlet{
 		int number = (!req.getParameter("number").equals(""))? Integer.parseInt(req.getParameter("number")):0;
 		int sale = (!req.getParameter("sale").equals(""))? Integer.parseInt(req.getParameter("sale")):0;
 		
-		String fileName = "";
-		//upload file
-		
-        String appPath = req.getServletContext().getRealPath("");
-        appPath = appPath.replace('\\', '/');
-        // Thư mục để save file tải lên.
-        String fullSavePath = null;
-        if (appPath.endsWith("/")) {
-            fullSavePath = appPath + SAVE_DIRECTORY;
-        } else {
-            fullSavePath = appPath + "/" + SAVE_DIRECTORY;
-        }
-        // Danh mục các phần đã upload lên (Có thể là nhiều file).
-        for (Part part : req.getParts()) {
-            fileName = extractFileName(part);
-            if (fileName != null && fileName.length() > 0) {
-                String filePath = fullSavePath + fileName;
-                System.out.println("Write attachment to file: " + filePath);
-
-                // Ghi vào file.
-                part.write(filePath);
-                break;
-            }
-        }
-        
-        
+	
 		List<String> errors = new ArrayList<String>();
 		if(category_id == 0) {
 			errors.add("Please choose category");
@@ -149,6 +124,10 @@ public class ProductServlet extends HttpServlet{
 			req.getRequestDispatcher("/WEB-INF/views/admin/product/add.jsp").forward(req, resp);
 
 		}else{
+			
+			//upload file
+			String fileName = uploadFile(req,resp);
+			
 			Product product = new Product();
 			product.setName(name);
 			product.setCategory_id(category_id);
@@ -176,6 +155,8 @@ public class ProductServlet extends HttpServlet{
 		int number = (!req.getParameter("number").equals(""))? Integer.parseInt(req.getParameter("number")):0;
 		int sale = (!req.getParameter("sale").equals(""))? Integer.parseInt(req.getParameter("sale")):0;
 		
+		
+		
 		List<String> errors = new ArrayList<String>();
 		if(category_id == 0) {
 			errors.add("Please choose category");
@@ -197,13 +178,16 @@ public class ProductServlet extends HttpServlet{
 			req.setAttribute("errors",errors );
 			req.getRequestDispatcher("/WEB-INF/views/admin/product/edit.jsp").forward(req, resp);
 		}else{
+			//upload file
+			String fileName = uploadFile(req,resp);
+	
 			Product product = new Product();
 			product.setName(name);
 			product.setCategory_id(category_id);
 			product.setNumber(number);
 			product.setPrice(price);
 			product.setSale(sale);
-			
+			product.setImage(fileName);
 			ProductDAO productDAO = new ProductDAO();
 			productDAO.updateProduct(product,id);
 			
@@ -227,5 +211,40 @@ public class ProductServlet extends HttpServlet{
 			}
 		}
 		return null;
+	}
+	
+	protected String uploadFile(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException
+	{
+		String appPath = req.getServletContext().getRealPath("");
+		String fileName = "";
+        appPath = appPath.replace('\\', '/');
+        // fordel save image
+        String fullSavePath = null;
+        if (appPath.endsWith("/")) {
+            fullSavePath = appPath + SAVE_DIRECTORY;
+        } else {
+            fullSavePath = appPath + "/" + SAVE_DIRECTORY;
+        }
+        
+        // create folder if not exists
+        File fileSaveDir = new File(fullSavePath);
+        if (!fileSaveDir.exists()) {
+            fileSaveDir.mkdir();
+        }
+        
+        // 
+        for (Part part : req.getParts()) {
+            fileName = extractFileName(part);
+            if (fileName != null && fileName.length() > 0) {
+                String filePath = fullSavePath + fileName;
+                System.out.println("Write attachment to file: " + filePath);
+
+                
+                part.write(filePath);
+                break;
+            }
+        }
+        
+        return fileName;
 	}
 }
